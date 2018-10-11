@@ -1,0 +1,39 @@
+﻿{  
+  "propertyEditors": [
+    {
+      "alias": "Koben.CdCheckbox",
+      "name": "Checkbox Conditional Displayer",
+      "icon": "icon-code",
+      "group": "Others",
+      "editor": {
+        "view": "~/App_Plugins/ConditionalDisplayers/checkboxView.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Default value",
+            "key": "deafult",
+            "view": "boolean"
+          },
+          {
+            "label": "Show if checked",
+            "description": "Enter the aliases of the properties to show if the checkbox if checked (comma separated)",
+            "key": "showIfChecked",
+            "view": "textstring"
+          },
+          {
+            "label": "Show if unchecked",
+            "description": "Enter the aliases of the properties to show if the checkbox if unchecked (comma separated)",
+            "key": "showIfUnchecked",
+            "view": "textstring"
+          }
+        ]
+      }
+    }
+  ],
+
+  "javascript": [
+    "~/App_Plugins/OrEditor/editorController.js"
+  ]
+
+}

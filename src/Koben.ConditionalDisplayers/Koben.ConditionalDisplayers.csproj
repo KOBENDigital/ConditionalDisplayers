@@ -44,8 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web\App_Plugins\ConditionalDisplayers\views\checkboxView.html" />
-    <Content Include="Web\App_Plugins\ConditionalDisplayers\js\checkboxController.js" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\checkbox\views\editor.html" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\checkbox\js\controller.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web\App_Plugins\ConditionalDisplayers\package.manifest" />

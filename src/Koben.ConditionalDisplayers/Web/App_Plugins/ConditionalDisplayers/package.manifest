@@ -6,7 +6,7 @@
       "icon": "icon-code",
       "group": "Others",
       "editor": {
-        "view": "~/App_Plugins/ConditionalDisplayers/checkboxView.html"
+        "view": "~/App_Plugins/ConditionalDisplayers/checkbox/views/editor.html"
       },
       "prevalues": {
         "fields": [
@@ -33,7 +33,7 @@
   ],
 
   "javascript": [
-    "~/App_Plugins/OrEditor/editorController.js"
+    "~/App_Plugins/ConditionalDisplayers/checkbox/js/controller.js"
   ]
 
 }

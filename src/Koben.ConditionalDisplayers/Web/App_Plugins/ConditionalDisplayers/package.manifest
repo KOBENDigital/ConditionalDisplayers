@@ -1,18 +1,18 @@
-﻿{  
+﻿{
   "propertyEditors": [
     {
       "alias": "Koben.CdCheckbox",
       "name": "Checkbox Conditional Displayer",
       "icon": "icon-code",
-      "group": "Others",
+      "group": "Conditional Displayers",
       "editor": {
-        "view": "~/App_Plugins/ConditionalDisplayers/checkbox/views/editor.html"
+        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.html"
       },
       "prevalues": {
         "fields": [
           {
             "label": "Default value",
-            "key": "deafult",
+            "key": "default",
             "view": "boolean"
           },
           {
@@ -29,11 +29,35 @@
           }
         ]
       }
+    },
+    {
+      "alias": "Koben.CdDropdownFlexible",
+      "name": "Dropdown Conditional Displayer",
+      "icon": "icon-code",
+      "group": "Conditional Displayers",
+      "editor": {
+        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible/dropdownFlexible.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Add prevalue",
+            "description": "Add, remove or sort values for the list.",
+            "key": "items",
+            "view": "/App_Plugins/ConditionalDisplayers/prevalueeditors/cdMultivalues.html"
+          }
+        ]
+      }
     }
   ],
 
   "javascript": [
-    "~/App_Plugins/ConditionalDisplayers/checkbox/js/controller.js"
-  ]
+    "~/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible/dropdownFlexible.controller.js",
+    "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.controller.js",
+
+    "~/App_Plugins/ConditionalDisplayers/prevalueeditors/cdMultivalues.controller.js"
+  ],
+
+  "css": [ "~/App_Plugins/ConditionalDisplayers/cd.css" ]
 
 }

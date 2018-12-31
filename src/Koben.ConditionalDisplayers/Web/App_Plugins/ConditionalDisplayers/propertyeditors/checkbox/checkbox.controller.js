@@ -1,4 +1,4 @@
-﻿angular.module("umbraco").controller("koben.CdCheckboxController", cdCheckboxController)
+﻿angular.module("umbraco").controller("koben.ConditionalDisplayers.CheckboxController", cdCheckboxController)
 
 
 function cdCheckboxController($scope) {
@@ -7,28 +7,28 @@ function cdCheckboxController($scope) {
     function displayProps(show, hide) {
         //Elements to show
         var showEls = show.split(',');
-        var s = "";
-        for (var i = 0; i < showEls.length; i++) {
-            if (s !== "") {
-                s += ",";
-            }
-            s += "div[data-element='property-" + showEls[i] + "']";
-        }
+        var s = elSelectors(showEls);
+
         $(s).show("slow");
 
         //Elements to hide
         var hideEls = hide.split(',');
-        var h = "";
-        for (var i = 0; i < hideEls.length; i++) {
-            if (h !== "") {
-                h += ",";
-            }
-            h += "div[data-element='property-" + hideEls[i] + "']";
-        }
+        var h = elSelectors(hideEls);
 
         $(h).hide("slow");
     }
- 
+
+    function elSelectors(els) {
+        var h = "";
+        for (var i = 0; i < els.length; i++) {
+            if (h !== "") {
+                h += ",";
+            }
+            h += "div[data-element='property-" + els[i].trim() + "']";
+        }
+
+        return h;
+    }
 
     function setupViewModel() {
         $scope.renderModel = {

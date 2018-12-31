@@ -1,0 +1,1 @@
+xcopy /y/s "C:\Users\koben\Documents\Visual Studio 2017\Projects\ConditionalDisplayers\src\Koben.ConditionalDisplayers\Web\App_Plugins" "C:\Users\koben\Documents\Visual Studio 2017\Projects\ConditionalDisplayers\umbracoClient\umbracoClient\App_Plugins"

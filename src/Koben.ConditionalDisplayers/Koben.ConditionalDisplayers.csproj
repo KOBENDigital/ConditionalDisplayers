@@ -44,11 +44,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web\App_Plugins\ConditionalDisplayers\checkbox\views\editor.html" />
-    <Content Include="Web\App_Plugins\ConditionalDisplayers\checkbox\js\controller.js" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\cd.css" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
+    <Content Include="Web\App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web\App_Plugins\ConditionalDisplayers\package.manifest" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /S /Y /I "$(SolutionDir)\Web\App_Plugins\ConditionalDisplayers" "$(SolutionDir)\..\TestWeb\App_Plugins\ConditionalDisplayers"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

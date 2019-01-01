@@ -1,7 +1,7 @@
 ﻿{
   "propertyEditors": [
     {
-      "alias": "Koben.CdCheckbox",
+      "alias": "Our.Umbraco.CdCheckbox",
       "name": "Checkbox Conditional Displayer",
       "icon": "icon-code",
       "group": "Conditional Displayers",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "alias": "Koben.CdDropdownFlexible",
+      "alias": "Our.Umbraco.CdDropdownFlexible",
       "name": "Dropdown Conditional Displayer",
       "icon": "icon-code",
       "group": "Conditional Displayers",

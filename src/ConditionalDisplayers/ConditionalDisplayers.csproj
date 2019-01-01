@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{965CDF4C-043F-4AED-AB61-1D61B9FF6489}</ProjectGuid>
+    <ProjectGuid>{CA7F24CD-805C-405E-9ED5-ADF24536EB6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Our.Umbraco.ConditionalDisplayers</RootNamespace>
@@ -47,16 +47,14 @@
     <Content Include="App_Plugins\ConditionalDisplayers\cd.css" />
     <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
     <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
-    <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
     <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+    <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
     <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
     <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Plugins\ConditionalDisplayers\package.manifest" />
-    <None Include="Our.Umbraco.ConditionalDisplayers.nuspec" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /S /Y /I "$(SolutionDir)\App_Plugins\ConditionalDisplayers" "$(SolutionDir)\..\TestWeb\App_Plugins\ConditionalDisplayers"</PostBuildEvent>

@@ -5,11 +5,11 @@ This is an Umbraco package. It implements a checkbox and dropdown datatype edito
 ## Installation
 
 ### Nuget
-[![NuGet](https://buildstats.info/nuget/Koben.ConditionalDisplayers)](https://www.nuget.org/packages/Koben.Iconic/)
+[![NuGet](https://buildstats.info/nuget/Our.Umbraco.ConditionalDisplayers)](https://www.nuget.org/packages/Our.Umbraco.ConditionalDisplayers/)
 
 Run this form your Package Manager Console in Visual Studio:
 
-    PM> Install-Package Koben.Iconic
+    PM> Install-Package Our.Umbraco.ConditionalDisplayers
 
 ### Umbraco Package
 
@@ -40,3 +40,6 @@ You'll have to create a list of options that the dropdown will display. In addit
 
 <strong>Note:</strong> the difference of behaviour between the checkbox and the dropdown input logic can be a bit confusing, but after a lot of testing it seems the most flexible way to combine the different possibilities when configuring them. I'm open to other behaviour suggestions.
 
+## Getting the properties values
+
+The Conditional Displayers are normal property editors so you can access their values as with any other property (strongly typed model, GetPropertyValue,...)

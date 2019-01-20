@@ -30,6 +30,21 @@ function cdCheckboxController($scope) {
         return h;
     }
 
+    $scope.runDisplayLogic = function () {
+        if ($scope.renderModel.value) {
+            displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked);
+        } else {
+            displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
+        }
+    };
+
+    $scope.clicked = function () {
+        $scope.renderModel.value = !$scope.renderModel.value;
+        $scope.runDisplayLogic();
+    }
+
+
+
     function setupViewModel() {
         $scope.renderModel = {
             value: false
@@ -44,31 +59,9 @@ function cdCheckboxController($scope) {
         }
 
         //init visible fields
-        if ($scope.renderModel.value) {
-            displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked);
-        } else {
-            displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
-        }
+        $scope.runDisplayLogic();
     }
 
     setupViewModel();
-
-    $scope.$watch("renderModel.value", function (newVal) {
-        $scope.model.value = newVal === true ? "1" : "0";
-
-        if (newVal) {
-            displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked);
-        } else {
-            displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
-        }
-    });
-
-    //here we declare a special method which will be called whenever the value has changed from the server
-    //this is instead of doing a watch on the model.value = faster
-    $scope.model.onValueChanged = function (newVal, oldVal) {
-        //update the display val again if it has changed from the server
-        setupViewModel();
-    };
-
 
 };

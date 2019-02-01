@@ -31,7 +31,9 @@ function cdCheckboxController($scope) {
     }
 
     $scope.runDisplayLogic = function () {
-        if ($scope.renderModel.value) {
+        if (!$scope.model.value) $scope.model.value = false;
+
+        if ($scope.model.value) {
             displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked);
         } else {
             displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
@@ -39,23 +41,20 @@ function cdCheckboxController($scope) {
     };
 
     $scope.clicked = function () {
-        $scope.renderModel.value = !$scope.renderModel.value;
+        $scope.model.value = !$scope.model.value;
         $scope.runDisplayLogic();
     }
 
 
 
-    function setupViewModel() {
-        $scope.renderModel = {
-            value: false
-        };
+    function setupViewModel() {  
 
         if ($scope.model.config && $scope.model.config.default && $scope.model.config.default.toString() === "1" && $scope.model && !$scope.model.value) {
-            $scope.renderModel.value = true;
+            $scope.model.value = true;
         }
 
         if ($scope.model && $scope.model.value && ($scope.model.value.toString() === "1" || angular.lowercase($scope.model.value) === "true")) {
-            $scope.renderModel.value = true;
+            $scope.model.value = true;
         }
 
         //init visible fields

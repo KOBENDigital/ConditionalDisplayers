@@ -6,7 +6,8 @@
       "icon": "icon-code",
       "group": "Conditional Displayers",
       "editor": {
-        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.html"
+        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.html",
+        "valueType": "STRING"
       },
       "prevalues": {
         "fields": [

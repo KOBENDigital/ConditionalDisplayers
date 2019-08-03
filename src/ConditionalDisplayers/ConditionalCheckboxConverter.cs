@@ -6,36 +6,17 @@ using System.Threading.Tasks;
 using Umbraco.Core;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
+using Umbraco.Core.PropertyEditors.ValueConverters;
 
 namespace Our.Umbraco.ConditionalDisplayers
 {
-    [PropertyValueType(typeof(bool))]
-    class ConditionalCheckboxConverter : IPropertyValueConverter
+    class ConditionalCheckboxConverter : YesNoValueConverter
     {
-        public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
+        public override bool IsConverter(IPublishedPropertyType propertyType)
         {
-            var attemptConvertInt = data.TryConvertTo<bool>();
-            if (attemptConvertInt.Success)
-            {
-                return attemptConvertInt.Result;
-            }
-
-            return null;
-        }
-
-        public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
-        {
-            return (bool)source;
-        }
-
-        public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsConverter(PublishedPropertyType propertyType)
-        {
-            return propertyType.PropertyEditorAlias.Equals("Our.Umbraco.CdCheckbox");
-        }
+            return propertyType.EditorAlias == "Our.Umbraco.CdCheckbox";
+        }   
     }
+
+
 }

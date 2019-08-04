@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Our.Umbraco.ConditionalDisplayers</id>
+    <version>2.0.0</version>
+    <title>Conditional Displayers</title>
+    <authors>Mario Lopez</authors>
+    <owners>Mario Lopez</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/KOBENDigital/ConditionalDisplayers</projectUrl>
+    <iconUrl>https://koben.com.au/media/1047/koben_logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Umbraco property editors that allow the conditional display of other properties.</summary>
+    <description>
+      <![CDATA[
+	  Umbraco property editors that allow the conditional display of other properties.
+    ]]>
+    </description>
+    <releaseNotes>
+      <![CDATA[ Compatible with Umbraco V8. Use v1.x for Umbaco 7. ]]>
+    </releaseNotes>
+    <tags>Umbraco property editor backoffice condition display</tags>
+  </metadata>
+  <files>
+    <file src="App_Plugins\**\*.*" target="content\App_Plugins\"/>
+  </files> 
+</package>

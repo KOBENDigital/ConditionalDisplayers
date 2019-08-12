@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Our.Umbraco.ConditionalDisplayers</id>
-    <version>2.0.0</version>
-    <title>Conditional Displayers</title>
-    <authors>Mario Lopez</authors>
-    <owners>Mario Lopez</owners>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/KOBENDigital/ConditionalDisplayers</projectUrl>
     <iconUrl>https://koben.com.au/media/1047/koben_logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <summary>Umbraco property editors that allow the conditional display of other properties.</summary>
+    <summary>$description$</summary>
     <description>
       <![CDATA[
 	  Umbraco property editors that allow the conditional display of other properties.

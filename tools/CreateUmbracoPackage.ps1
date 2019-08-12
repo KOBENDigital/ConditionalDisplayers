@@ -1,10 +1,10 @@
-param([string]$packageDirectory, [string]$buildConfiguration)
+param([string] $packageId, [string]$packageDirectory, [string]$buildConfiguration)
 
 $scriptDir = $PSScriptRoot
-$packageDirectory =  Join-Path $scriptDir "..\src"
+$targetDirectory =  Join-Path $scriptDir $packageDirectory
 $buildConfiguration = "release"
 
-$workingPackageFilePath = Join-Path $packageDirectory "package.xml"
+$workingPackageFilePath = Join-Path $targetDirectory "package.xml"
 
 $workingPackageFile = [xml](Get-Content $workingPackageFilePath)
 
@@ -29,7 +29,7 @@ foreach ($fileNode in $fileNodes) {
     $path = $pathNode.InnerText.Replace("/", "\").Replace("\bin", ("\bin\" + $buildConfiguration))
     $filePath = Join-Path $packageDirectory ($path + "\" + $name)
 	
-    if ($filePath.Contains($packageName + ".dll") -and [string]::IsNullOrWhiteSpace($versionFilePath)) {
+    if ($filePath.Contains($packageId + ".dll") -and [string]::IsNullOrWhiteSpace($versionFilePath)) {
         $fileStream = ([System.IO.FileInfo] (Get-Item $filePath)).OpenRead();
         $assemblyBytes = new-object byte[] $fileStream.Length
         $fileStream.Read($assemblyBytes, 0, $fileStream.Length);
@@ -44,7 +44,7 @@ foreach ($fileNode in $fileNodes) {
 }
 
 $versionNode.InnerText = $semVersion
-$workingPackageFile.Save((Join-Path $packageDirectory "package.xml"))
+#$workingPackageFile.Save((Join-Path $packageDirectory "package.xml"))
 
-Compress-Archive -LiteralPath $filepaths -CompressionLevel Optimal -DestinationPath ($packageName + "-" + $semVersion.Replace(".", "") + ".zip") -Update
+Compress-Archive -LiteralPath $filepaths -CompressionLevel Optimal -DestinationPath ($packageId + "-" + $semVersion.Replace(".", "") + ".zip") -Update
 

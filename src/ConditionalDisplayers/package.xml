@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Our.Umbraco.ConditionalDisplayers.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Our.Umbraco.ConditionalDisplayers.dll</orgName>
+    </file>
+    <file>
+      <guid>cd.css</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers</orgPath>
+      <orgName>cd.css</orgName>
+    </file>
+    <file>
+      <guid>package.manifest</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers</orgPath>
+      <orgName>package.manifest</orgName>
+    </file>
+    <file>
+      <guid>cdMultivalues.controller.js</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/prevalueeditors</orgPath>
+      <orgName>cdMultivalues.controller.js</orgName>
+    </file>
+    <file>
+      <guid>cdMultivalues.html</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/prevalueeditors</orgPath>
+      <orgName>cdMultivalues.html</orgName>
+    </file>
+    <file>
+      <guid>checkbox.controller.js</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox</orgPath>
+      <orgName>checkbox.controller.js</orgName>
+    </file>
+    <file>
+      <guid>checkbox.html</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox</orgPath>
+      <orgName>checkbox.html</orgName>
+    </file>
+    <file>
+      <guid>dropdownFlexible.controller.js</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible</orgPath>
+      <orgName>dropdownFlexible.controller.js</orgName>
+    </file>
+    <file>
+      <guid>dropdownFlexible.html</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible</orgPath>
+      <orgName>dropdownFlexible.html</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Conditional Displayers</name>
+      <version>
+      </version>
+      <iconUrl>https://raw.githubusercontent.com/KOBENDigital/Iconic/master/Documentation/koben_logo.png</iconUrl>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>https://github.com/KOBENDigital/ConditionalDisplayers</url>
+      <requirements type="Strict">
+        <major>7</major>
+        <minor>15</minor>
+        <patch>1</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Mario Lopez</name>
+      <website>https://github.com/skartknet</website>
+    </author>
+    <contributors>
+    </contributors>
+    <readme><![CDATA[Umbraco property editors that allow the conditional display of other properties. Includes a checkbox and a dropdown editor.
+
+Use v2.x for Umbraco and v1.x for Umbraco v7.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <Actions />
+</umbPackage>

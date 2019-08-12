@@ -81,16 +81,24 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
         //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
         function displayProps(show, hide) {
             //Elements to show
-            var showEls = show.split(',');
-            var s = elSelectors(showEls);
-
-            $(s).show("slow");
-
-            //Elements to hide
-            var hideEls = hide.split(',');
-            var h = elSelectors(hideEls);
-
-            $(h).hide("slow");
+            if (show) {
+                var showEls = show.split(',');
+    
+                if (showEls && showEls.length > 0) {
+                    var s = elSelectors(showEls);
+                    $(s).show("slow");
+                }
+            }
+    
+            if (hide) {
+                //Elements to hide
+                var hideEls = hide.split(',');
+    
+                if (hideEls && hideEls.length > 0) {
+                    var h = elSelectors(hideEls);
+                    $(h).hide("slow");
+                }
+            }
         }
 
         function elSelectors(els) {

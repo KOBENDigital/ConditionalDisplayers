@@ -1,0 +1,1 @@
+﻿dotnet nuget push Our.Umbraco.ConditionalDisplayers.2.2.0.nupkg -k oy2l7r43i7fky44xyxaqojganid5v4qutiwf5opq653ple -s https://api.nuget.org/v3/index.json

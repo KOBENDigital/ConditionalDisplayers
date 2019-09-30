@@ -66,7 +66,7 @@ function cdCheckboxController($scope) {
             $scope.renderModel.value = true;
         }
 
-        if ($scope.model && $scope.model.value && ($scope.model.value.toString() === "1" || angular.lowercase($scope.model.value) === "true")) {
+        if ($scope.model && $scope.model.value && ($scope.model.value.toString() === "1")) {
             $scope.renderModel.value = true;
         }
 

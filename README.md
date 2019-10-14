@@ -46,5 +46,6 @@ You'll have to create a list of options that the dropdown will display. In addit
 The Conditional Displayers are normal property editors so you can access their values as with any other property (strongly typed model, GetPropertyValue,...)
 
 # Donate
-If you like the package you can...
+This package is maintaned by Mario Lopez. If you want to say thank you:
+
 <a href="https://www.buymeacoffee.com/skartknet" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/yellow_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>

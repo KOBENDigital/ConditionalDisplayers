@@ -1,5 +1,6 @@
 angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.DropdownController",
     function ($scope) {
+        var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
 
         //setup the default config
         var config = {
@@ -45,7 +46,7 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
             if (item) {
                 displayProps(item.show, item.hide);
             }
-        }
+        };
 
         if (angular.isArray($scope.model.config.items)) {
             //PP: I dont think this will happen, but we have tests that expect it to happen..
@@ -107,7 +108,7 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
                 if (h !== "") {
                     h += ",";
                 }
-                h += "div[data-element='property-" + els[i].trim() + "']";
+                h += "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
             }
 
             return h;

@@ -1,7 +1,9 @@
-﻿angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.CheckboxController", cdCheckboxController)
+﻿angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.CheckboxController", cdCheckboxController);
 
 
 function cdCheckboxController($scope) {
+
+    var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
 
     //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
     function displayProps(show, hide) {
@@ -32,7 +34,7 @@ function cdCheckboxController($scope) {
             if (h !== "") {
                 h += ",";
             }
-            h += "div[data-element='property-" + els[i].trim() + "']";
+            h += "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
         }
 
         return h;
@@ -46,7 +48,7 @@ function cdCheckboxController($scope) {
 
     $scope.clicked = function () {
         $scope.renderModel.value = !$scope.renderModel.value;
-    }
+    };
 
     $scope.runDisplayLogic = function () {
         //init visible fields
@@ -55,7 +57,7 @@ function cdCheckboxController($scope) {
         } else {
             displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
         }
-    }
+    };
 
     function setupViewModel() {
         $scope.renderModel = {
@@ -84,4 +86,4 @@ function cdCheckboxController($scope) {
 
     setupViewModel();
 
-};
+}

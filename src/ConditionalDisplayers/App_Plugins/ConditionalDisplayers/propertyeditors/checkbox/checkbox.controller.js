@@ -34,7 +34,14 @@ function cdCheckboxController($scope) {
             if (h !== "") {
                 h += ",";
             }
-            h += "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
+
+            let prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
+
+            if (!$(prop).length) {
+                prop = "div[data-element='property-" + els[i].trim() + "']";
+            }
+
+            h += prop;           
         }
 
         return h;

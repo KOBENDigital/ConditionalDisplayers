@@ -21,7 +21,7 @@
         <div class="cd-prevalues-multivalues control-group" ng-repeat="item in model.value">
             <i class="icon icon-navigation handle"></i>
             <div>
-                <input type="text" ng-model="item.value" val-server="item_{{$index}}" required />
+                <input type="text" ng-model="item.value" val-server="item_{{$index}}" />
             </div>
             <div>
                 <input type="text" ng-model="item.show" val-server="item_{{$index}}" placeholder="Properties' aliases" />

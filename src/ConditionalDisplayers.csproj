@@ -254,7 +254,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /S /Y /I "$(ProjectDir)App_Plugins\ConditionalDisplayers" "C:\Users\mario\Source\Repos\UmbracoTests\Umbraco82\App_Plugins\ConditionalDisplayers"
+    <PostBuildEvent>xcopy /S /Y /I "$(ProjectDir)App_Plugins\ConditionalDisplayers" "D:\Repos\UmbracoTests\Umbraco82\App_Plugins\ConditionalDisplayers"
 
 </PostBuildEvent>
   </PropertyGroup>

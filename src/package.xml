@@ -36,10 +36,15 @@
       <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox</orgPath>
       <orgName>checkbox.html</orgName>
     </file>
-    <file>
+     <file>
       <guid>dropdownFlexible.controller.js</guid>
       <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible</orgPath>
       <orgName>dropdownFlexible.controller.js</orgName>
+    </file>
+    <file>
+      <guid>cdSharedLogic.js</guid>
+      <orgPath>/App_Plugins/ConditionalDisplayers/propertyeditors</orgPath>
+      <orgName>cdSharedLogic.js</orgName>
     </file>
     <file>
       <guid>dropdownFlexible.html</guid>
@@ -50,7 +55,7 @@
   <info>
     <package>
       <name>Conditional Displayers</name>
-      <version>2.2.1</version>
+      <version>2.3.0</version>
       <iconUrl>https://raw.githubusercontent.com/KOBENDigital/Iconic/master/Documentation/koben_logo.png</iconUrl>
       <license url="http://opensource.org/licenses/MIT">MIT License</license>
       <url>https://github.com/KOBENDigital/ConditionalDisplayers</url>

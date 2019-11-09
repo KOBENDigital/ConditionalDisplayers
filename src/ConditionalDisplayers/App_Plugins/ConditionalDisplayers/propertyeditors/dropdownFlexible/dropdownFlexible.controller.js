@@ -1,6 +1,12 @@
 angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.DropdownController",
     function ($scope) {
-        var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
+
+        var aliasLength = $scope.model.propertyAlias.length;
+        var parentAliasLength = $scope.model.alias.length;
+
+        //var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
+
+        var parentPropertyAlias = slice(0, parentAliasLength - aliasLength);
 
         //setup the default config
         var config = {

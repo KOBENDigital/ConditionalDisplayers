@@ -1,57 +1,12 @@
 ﻿angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.CheckboxController", cdCheckboxController);
 
 
-function cdCheckboxController($scope) {
+function cdCheckboxController($scope, cdSharedLogic) {
 
     // propertyAlias is used in NestedContent properties. If we find we are in NC we
     // extract the parent alias to find later on only the property belonging to the same item where CD is included.
     if ($scope.model.propertyAlias) {
         var parentPropertyAlias = $scope.model.alias.slice(0, -$scope.model.propertyAlias.length);
-    }
-
-    //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
-    function displayProps(show, hide) {
-        //Elements to show
-        if (show) {
-            var showEls = show.split(',');
-
-            if (showEls && showEls.length > 0) {
-                var s = elSelectors(showEls);
-                $(s).show("slow");
-            }
-        }
-
-        if (hide) {
-            //Elements to hide
-            var hideEls = hide.split(',');
-
-            if (hideEls && hideEls.length > 0) {
-                var h = elSelectors(hideEls);
-                $(h).hide("slow");
-            }
-        }
-    }
-
-    function elSelectors(els) {
-        var h = "";
-        let prop;
-
-        for (var i = 0; i < els.length; i++) {
-            if (h !== "") {
-                h += ",";
-            }
-
-            if (parentPropertyAlias) {
-                prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
-            }
-            else {
-                prop = "div[data-element='property-" + els[i].trim() + "']";
-            }
-
-            h += prop;
-        }
-
-        return h;
     }
 
     $scope.$watch("renderModel.value", function (newVal) {
@@ -67,9 +22,9 @@ function cdCheckboxController($scope) {
     $scope.runDisplayLogic = function () {
         //init visible fields
         if ($scope.renderModel.value) {
-            displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked);
+            cdSharedLogic.displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked, parentPropertyAlias);
         } else {
-            displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked);
+            cdSharedLogic.displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked, parentPropertyAlias);
         }
     };
 

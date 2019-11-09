@@ -1,12 +1,11 @@
 angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.DropdownController",
-    function ($scope) {
+    function ($scope, cdSharedLogic) {
 
-        var aliasLength = $scope.model.propertyAlias.length;
-        var parentAliasLength = $scope.model.alias.length;
-
-        //var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
-
-        var parentPropertyAlias = slice(0, parentAliasLength - aliasLength);
+        // propertyAlias is used in NestedContent properties. If we find we are in NC we
+        // extract the parent alias to find later on only the property belonging to the same item where CD is included.
+        if ($scope.model.propertyAlias) {
+            var parentPropertyAlias = $scope.model.alias.slice(0, -$scope.model.propertyAlias.length);
+        }
 
         //setup the default config
         var config = {
@@ -20,6 +19,12 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
         //map back to the model
         $scope.model.config = config;
 
+        $scope.updateDropdownValue = function () {
+            var item = _.findWhere(config.items, { value: $scope.model.value });
+            if (item) {
+                cdSharedLogic.displayProps(item.show, item.hide, parentPropertyAlias);
+            }
+        };
 
 
         function convertArrayToDictionaryArray(model) {
@@ -47,12 +52,7 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
             return newItems;
         }
 
-        $scope.updateDropdownValue = function () {
-            var item = _.findWhere(config.items, { value: $scope.model.value });
-            if (item) {
-                displayProps(item.show, item.hide);
-            }
-        };
+        
 
         if (angular.isArray($scope.model.config.items)) {
             //PP: I dont think this will happen, but we have tests that expect it to happen..
@@ -85,47 +85,6 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
             $scope.updateDropdownValue();
         }
 
-        //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
-        function displayProps(show, hide) {
-            //Elements to show
-            if (show) {
-                var showEls = show.split(',');
-    
-                if (showEls && showEls.length > 0) {
-                    var s = elSelectors(showEls);
-                    $(s).show("slow");
-                }
-            }
-    
-            if (hide) {
-                //Elements to hide
-                var hideEls = hide.split(',');
-    
-                if (hideEls && hideEls.length > 0) {
-                    var h = elSelectors(hideEls);
-                    $(h).hide("slow");
-                }
-            }
-        }
-
-        function elSelectors(els) {
-            var h = "";
-            for (var i = 0; i < els.length; i++) {
-                if (h !== "") {
-                    h += ",";
-                }
-         
-                let prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
-
-                if (!$(prop).length) {
-                    prop = "div[data-element='property-" + els[i].trim() + "']";
-                }
-
-                h += prop;     
-            }
-
-            return h;
-        }
-
+     
     });
 

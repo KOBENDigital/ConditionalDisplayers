@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Our.Umbraco.ConditionalDisplayers</id>
-    <version>1.3.1</version>
+    <version>1.4.0</version>
     <title>Conditional Displayers</title>
     <authors>Mario Lopez</authors>
     <owners>KØBEN digital</owners>
@@ -17,7 +17,7 @@
     ]]>
     </description>
     <releaseNotes>
-      <![CDATA[ Use the new toggle switch UI. ]]>
+      <![CDATA[ Supports Nested Content. ]]>
     </releaseNotes>
     <tags>Umbraco property editor backoffice condition display</tags>
   </metadata>

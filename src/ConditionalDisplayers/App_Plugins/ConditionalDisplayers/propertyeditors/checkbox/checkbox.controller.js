@@ -3,7 +3,11 @@
 
 function cdCheckboxController($scope) {
 
-    var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
+    // propertyAlias is used in NestedContent properties. If we find we are in NC we
+    // extract the parent alias to find later on only the property belonging to the same item where CD is included.
+    if ($scope.model.propertyAlias) {
+        var parentPropertyAlias = $scope.model.alias.slice(0, -$scope.model.propertyAlias.length);
+    }
 
     //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
     function displayProps(show, hide) {
@@ -30,18 +34,21 @@ function cdCheckboxController($scope) {
 
     function elSelectors(els) {
         var h = "";
+        let prop;
+
         for (var i = 0; i < els.length; i++) {
             if (h !== "") {
                 h += ",";
             }
 
-            let prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
-
-            if (!$(prop).length) {
+            if (parentPropertyAlias) {
+                prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
+            }
+            else {
                 prop = "div[data-element='property-" + els[i].trim() + "']";
             }
 
-            h += prop;           
+            h += prop;
         }
 
         return h;

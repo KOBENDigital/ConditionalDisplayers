@@ -228,8 +228,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /S /Y /I "$(SolutionDir)\App_Plugins\ConditionalDisplayers" "$(SolutionDir)\..\TestWeb\App_Plugins\ConditionalDisplayers"
-xcopy /S /Y /I "$(SolutionDir)\App_Plugins\ConditionalDisplayers" "$(SolutionDir)\..\TestClient713\App_Plugins\ConditionalDisplayers"</PostBuildEvent>
+    <PostBuildEvent>xcopy /S /Y /I "$(SolutionDir)\App_Plugins\ConditionalDisplayers" "D:\Repos\UmbracoTests\Umbraco7last\App_Plugins\ConditionalDisplayers"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
 </Project>

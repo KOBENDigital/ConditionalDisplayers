@@ -1,6 +1,10 @@
 angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.DropdownController",
     function ($scope) {
-        var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
+
+        // check for the occurance of property alias before the underscore
+        var propertyAliasLastIndex = $scope.model.alias.toString().lastIndexOf('_' + $scope.model.propertyAlias);
+        // add 1 to compensate for the underscore
+        var parentPropertyAlias = $scope.model.alias.toString().substring(0, propertyAliasLastIndex + 1);
 
         //setup the default config
         var config = {
@@ -75,7 +79,7 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
             else {
                 $scope.model.value = "";
             }
-        } else {            
+        } else {
             $scope.updateDropdownValue();
         }
 
@@ -84,17 +88,17 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
             //Elements to show
             if (show) {
                 var showEls = show.split(',');
-    
+
                 if (showEls && showEls.length > 0) {
                     var s = elSelectors(showEls);
                     $(s).show("slow");
                 }
             }
-    
+
             if (hide) {
                 //Elements to hide
                 var hideEls = hide.split(',');
-    
+
                 if (hideEls && hideEls.length > 0) {
                     var h = elSelectors(hideEls);
                     $(h).hide("slow");
@@ -108,14 +112,14 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
                 if (h !== "") {
                     h += ",";
                 }
-         
+
                 let prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
 
                 if (!$(prop).length) {
                     prop = "div[data-element='property-" + els[i].trim() + "']";
                 }
 
-                h += prop;     
+                h += prop;
             }
 
             return h;

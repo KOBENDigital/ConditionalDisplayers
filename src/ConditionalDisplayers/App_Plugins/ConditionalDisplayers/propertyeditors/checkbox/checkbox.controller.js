@@ -3,7 +3,10 @@
 
 function cdCheckboxController($scope) {
 
-    var parentPropertyAlias = $scope.model.alias.toString().replace($scope.model.propertyAlias, '');
+    // check for the occurance of property alias before the underscore
+    var propertyAliasLastIndex = $scope.model.alias.toString().lastIndexOf('_' + $scope.model.propertyAlias);
+    // add 1 to compensate for the underscore
+    var parentPropertyAlias = $scope.model.alias.toString().substring(0, propertyAliasLastIndex + 1);
 
     //the properties with alias in 'show' and 'hide' will be affected when the value is triggered.
     function displayProps(show, hide) {

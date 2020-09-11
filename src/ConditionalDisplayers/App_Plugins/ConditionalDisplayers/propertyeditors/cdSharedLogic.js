@@ -37,10 +37,10 @@ function cdSharedLogic() {
                     }
 
                     if (parentPropertyAlias) {
-                        prop = "div[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
+                        prop = "[data-element='property-" + parentPropertyAlias + els[i].trim() + "']";
                     }
                     else {
-                        prop = "div[data-element='property-" + els[i].trim() + "']";
+                        prop = "[data-element='property-" + els[i].trim() + "']";
                     }
 
                     h += prop;

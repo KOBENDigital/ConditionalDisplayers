@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\UmbracoV8Tests\Web\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -253,11 +253,12 @@
     <None Include="App_Plugins\ConditionalDisplayers\package.manifest" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /S /Y /I "$(ProjectDir)App_Plugins\ConditionalDisplayers" "D:\Repos\UmbracoTests\Umbraco82\App_Plugins\ConditionalDisplayers"
-
-</PostBuildEvent>
+    <PostBuildEvent>xcopy /y/s "$(ProjectDir)\App_Plugins" "C:\Users\Mario\source\repos\UmbracoV8Tests\Web\App_Plugins"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <Import Project="packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />

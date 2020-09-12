@@ -24,7 +24,7 @@ $params = '..\src\ConditionalDisplayers.sln', '-property:Configuration=Release',
 & $msBuild $params
 
 # Create Nuget package
-.\nuget.exe pack -Build ..\src\ConditionalDisplayers.csproj
+.\nuget.exe pack -Build ..\src\ConditionalDisplayers.nuspec
 Write-Host "Nuget package created."
 
 # Create Umbraco package

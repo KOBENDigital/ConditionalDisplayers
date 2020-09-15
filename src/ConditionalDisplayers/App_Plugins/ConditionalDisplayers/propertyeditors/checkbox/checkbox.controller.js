@@ -20,11 +20,13 @@ function cdCheckboxController($scope, cdSharedLogic) {
     };
 
     $scope.runDisplayLogic = function () {
-        //init visible fields
-        if ($scope.renderModel.value) {
-            cdSharedLogic.displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked, parentPropertyAlias);
-        } else {
-            cdSharedLogic.displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked, parentPropertyAlias);
+        if (editorState.current.ModelState) {
+            //init visible fields
+            if ($scope.renderModel.value) {
+                cdSharedLogic.displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked, parentPropertyAlias);
+            } else {
+                cdSharedLogic.displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked, parentPropertyAlias);
+            }
         }
     };
 

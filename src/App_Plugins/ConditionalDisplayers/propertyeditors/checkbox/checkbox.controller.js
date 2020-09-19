@@ -1,7 +1,7 @@
 ﻿angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.CheckboxController", cdCheckboxController);
 
 
-function cdCheckboxController($scope, cdSharedLogic) {
+function cdCheckboxController($scope, editorState, cdSharedLogic) {
 
     // propertyAlias is used in NestedContent properties. If we find we are in NC we
     // extract the parent alias to find later on only the property belonging to the same item where CD is included.
@@ -20,11 +20,13 @@ function cdCheckboxController($scope, cdSharedLogic) {
     };
 
     $scope.runDisplayLogic = function () {
-        //init visible fields
-        if ($scope.renderModel.value) {
-            cdSharedLogic.displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked, parentPropertyAlias);
-        } else {
-            cdSharedLogic.displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked, parentPropertyAlias);
+        if (editorState.current.ModelState) {
+            //init visible fields
+            if ($scope.renderModel.value) {
+                cdSharedLogic.displayProps($scope.model.config.showIfChecked, $scope.model.config.showIfUnchecked, parentPropertyAlias);
+            } else {
+                cdSharedLogic.displayProps($scope.model.config.showIfUnchecked, $scope.model.config.showIfChecked, parentPropertyAlias);
+            }
         }
     };
 

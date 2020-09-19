@@ -1,1 +1,1 @@
-﻿dotnet nuget push Our.Umbraco.ConditionalDisplayers.2.3.3 -k oy2gjteyo3caciydw6fa2o2d5y4fp4vujoqclffdgo5zqm -s https://api.nuget.org/v3/index.json
+﻿dotnet nuget push Our.Umbraco.ConditionalDisplayers.2.3.3 -k {apiKey} -s https://api.nuget.org/v3/index.json

@@ -1,5 +1,5 @@
-﻿using Umbraco.Core.Models.PublishedContent;
-using Umbraco.Core.PropertyEditors.ValueConverters;
+﻿using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
 
 namespace Our.Umbraco.ConditionalDisplayers
 {

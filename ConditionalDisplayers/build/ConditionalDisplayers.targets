@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <ConditionalDisplayersContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\ConditionalDisplayers\**\*.*</ConditionalDisplayersContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyConditionalDisplayersAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <ConditionalDisplayersContentFiles Include="$(ConditionalDisplayersContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying ConditionalDisplayers files: $(ConditionalDisplayersContentFilesPath) - #@(ConditionalDisplayersContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(ConditionalDisplayersContentFiles)"
+            DestinationFiles="@(ConditionalDisplayersContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\ConditionalDisplayers\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+    </Target>
+
+    <Target Name="ClearConditionalDisplayersAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <ConditionalDisplayersDir Include="$(MSBuildProjectDirectory)\App_Plugins\ConditionalDisplayers\" />
+        </ItemGroup>
+        <Message Text="Clear old ConditionalDisplayers data"  Importance="high" />
+        <RemoveDir Directories="@(ConditionalDisplayersDir)"  />
+    </Target>
+
+</Project>

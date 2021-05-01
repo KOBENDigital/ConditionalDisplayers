@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <Product>ConditionalDisplayers</Product>
+        <PackageId>ConditionalDisplayers</PackageId>
+        <Title>ConditionalDisplayers</Title>
+        <Description>...</Description>
+        <Product>...</Product>
+        <PackageTags>umbraco plugin package</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-beta001" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0-beta001" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="build\**\*.*">
+            <Pack>True</Pack>
+            <PackagePath>build</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="App_Plugins\ConditionalDisplayers\cd.css" />
+      <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="App_Plugins\ConditionalDisplayers\cd.css" />
+      <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
+    </ItemGroup>
+</Project>

@@ -2,12 +2,20 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <ContentTargetFolders>.</ContentTargetFolders>
-        <Product>ConditionalDisplayers</Product>
-        <PackageId>ConditionalDisplayers</PackageId>
+        <PackageId>Our.Umbraco.ConditionalDisplayers</PackageId>
         <Title>ConditionalDisplayers</Title>
-        <Description>...</Description>
-        <Product>...</Product>
-        <PackageTags>umbraco plugin package</PackageTags>
+        <Description>Umbraco property editors that allow the conditional display of other properties.</Description>
+        <Product>Conditional Displayers</Product>
+        <PackageTags>umbraco property editor backoffice condition display</PackageTags>
+        <AssemblyName>Our.Umbraco.ConditionalDisplayers</AssemblyName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>3.0.0-beta001</Version>
+		<Authors>Mario Lopez</Authors>
+		<PackageIcon>koben_logo.png</PackageIcon>
+		<PackageReleaseNotes>Compatible with Umbraco 9</PackageReleaseNotes>
+		<RepositoryUrl>https://github.com/KOBENDigital/ConditionalDisplayers</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IsPackable>true</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,10 +28,15 @@
             <Pack>True</Pack>
             <PackagePath>build</PackagePath>
         </None>
+        <None Include="images\koben_logo.png">
+          <Pack>True</Pack>
+          <PackagePath></PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="App_Plugins\ConditionalDisplayers\cd.css" />
+      <None Remove="App_Plugins\ConditionalDisplayers\package.manifest" />
       <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
       <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
       <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
@@ -35,6 +48,7 @@
 
     <ItemGroup>
       <Content Include="App_Plugins\ConditionalDisplayers\cd.css" />
+      <Content Include="App_Plugins\ConditionalDisplayers\package.manifest" />
       <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
       <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
       <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />

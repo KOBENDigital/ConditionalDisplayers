@@ -11,8 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{868186BA-EFC0-4738-AAEB-C8F057A4F7D6}"
 	ProjectSection(SolutionItems) = preProject
 		tools\build.ps1 = tools\build.ps1
-		tools\CreateUmbracoPackage.ps1 = tools\CreateUmbracoPackage.ps1
-		tools\publishNuget.bat = tools\publishNuget.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConditionalDisplayers", "ConditionalDisplayers\ConditionalDisplayers.csproj", "{30393E88-9B03-4D2F-9BC9-8D6646FC057D}"

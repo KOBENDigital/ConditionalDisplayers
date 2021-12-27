@@ -45,8 +45,8 @@ angular.module("umbraco").controller("Our.Umbraco.ConditionalDisplayers.Dropdown
         function convertObjectToDictionaryArray(model) {
             //now we need to format the items in the dictionary because we always want to have an array
             var newItems = [];
-            var vals = _.values($scope.model.config.items);
-            var keys = _.keys($scope.model.config.items);
+            var vals = _.values(model);
+            var keys = _.keys(model);
 
             for (var i = 0; i < vals.length; i++) {
                 var label = vals[i].value ? vals[i].value : vals[i];

@@ -8,14 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{868186BA-EFC0-4738-AAEB-C8F057A4F7D6}"
-	ProjectSection(SolutionItems) = preProject
-		tools\build.ps1 = tools\build.ps1
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoV9", "UmbracoV9\UmbracoV9.csproj", "{03E227B6-433A-4A22-A5B6-EF492011D50C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoV9", "UmbracoV9\UmbracoV9.csproj", "{03E227B6-433A-4A22-A5B6-EF492011D50C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConditionalDisplayers", "ConditionalDisplayers\ConditionalDisplayers.csproj", "{0184080B-16C7-42BE-B984-518ABBDEA43E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{05C4D072-5F24-4195-A80E-07793BB9C82C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

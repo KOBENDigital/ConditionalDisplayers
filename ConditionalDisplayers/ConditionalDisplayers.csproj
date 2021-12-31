@@ -9,7 +9,7 @@
         <PackageTags>umbraco property editor backoffice condition display</PackageTags>
         <AssemblyName>Our.Umbraco.ConditionalDisplayers</AssemblyName>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<Version>3.0.1-pre001</Version>
+		<Version>3.0.1-pre002</Version>
 		<Authors>Mario Lopez</Authors>
 		<PackageIcon>koben_logo.png</PackageIcon>
 		<PackageReleaseNotes>Compatible with Umbraco 9</PackageReleaseNotes>

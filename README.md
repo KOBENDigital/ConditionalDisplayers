@@ -18,6 +18,10 @@ https://our.umbraco.com/packages/backoffice-extensions/conditional-displayers/
 ### Manually
 Download the code and copy it into you App_Plugin folder.
 
+## Test Website Credentials:
+Username: `admin@admin.com`\
+Password: `Password123`
+
 ## Configuration
 
 ### Checkbox

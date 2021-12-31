@@ -1,0 +1,68 @@
+﻿{
+  "propertyEditors": [
+    {
+      "alias": "Our.Umbraco.CdCheckbox",
+      "name": "Checkbox Conditional Displayer",
+      "icon": "icon-code",
+      "group": "Conditional Displayers",
+      "editor": {
+        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Default value",
+            "key": "default",
+            "view": "boolean"
+          },
+          {
+            "label": "Show if checked",
+            "description": "Enter the aliases of the properties to show if the checkbox if checked (comma separated)",
+            "key": "showIfChecked",
+            "view": "textstring"
+          },
+          {
+            "label": "Show if unchecked",
+            "description": "Enter the aliases of the properties to show if the checkbox if unchecked (comma separated)",
+            "key": "showIfUnchecked",
+            "view": "textstring"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Our.Umbraco.CdDropdownFlexible",
+      "name": "Dropdown Conditional Displayer",
+      "icon": "icon-code",
+      "group": "Conditional Displayers",
+      "editor": {
+        "view": "~/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible/dropdownFlexible.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Add prevalue",
+            "description": "Add, remove or sort values for the list.",
+            "key": "items",
+            "view": "/App_Plugins/ConditionalDisplayers/prevalueeditors/cdMultivalues.html"
+          },
+          {
+            "label": "Default value",
+            "key": "default",
+            "view": "textstring"
+          }
+        ]
+      }
+    }
+  ],
+
+  "javascript": [
+    "~/App_Plugins/ConditionalDisplayers/propertyeditors/cdSharedLogic.js",
+    "~/App_Plugins/ConditionalDisplayers/propertyeditors/dropdownFlexible/dropdownFlexible.controller.js",
+    "~/App_Plugins/ConditionalDisplayers/propertyeditors/checkbox/checkbox.controller.js",
+    "~/App_Plugins/ConditionalDisplayers/prevalueeditors/cdMultivalues.controller.js"
+  ],
+
+  "css": [ "~/App_Plugins/ConditionalDisplayers/cd.css" ]
+
+}

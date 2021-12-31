@@ -1,0 +1,37 @@
+<div class="umb-property-editor umb-prevalues-multivalues" ng-controller="Our.Umbraco.ConditionalDisplayers.cdMultiValuesController">
+
+    <div class="control-group cd-prevalues-multivalues">
+        <div>
+            <strong>Value</strong>
+            <input overlay-submit-on-enter="false" name="newItem" focus-when="{{focusOnNew}}" ng-keydown="createNew($event)" type="text" ng-model="newItem.value" val-highlight="{{hasError}}" />
+        </div>
+        <div>
+            <strong>Show if selected <br /><small>(separate by comma)</small></strong>
+            <input type="text" ng-model="newItem.show" val-server="item_{{$index}}" placeholder="Properties' aliases" />
+        </div>
+        <div>
+            <strong>Hide if selected <br /><small>(separate by comma)</small></strong>
+            <input type="text" ng-model="newItem.hide" val-server="item_{{$index}}" placeholder="Properties' aliases" />
+        </div>
+        <div class="align-bottom">
+            <button class="btn btn-info align-bottom" ng-click="add($event)">Add</button>
+        </div>
+    </div>
+    <div ui-sortable="sortableOptions" class="control-group">
+        <div class="cd-prevalues-multivalues control-group" ng-repeat="item in model.value">
+            <i class="icon icon-navigation handle"></i>
+            <div>
+                <input type="text" ng-model="item.value" val-server="item_{{$index}}" />
+            </div>
+            <div>
+                <input type="text" ng-model="item.show" val-server="item_{{$index}}" placeholder="Properties' aliases" />
+            </div>
+            <div>
+                <input type="text" ng-model="item.hide" val-server="item_{{$index}}" placeholder="Properties' aliases" />
+            </div>
+            <div class="align-bottom">
+                <a class="umb-node-preview__action" ng-click="remove(item, $event)">Remove</a>
+            </div>
+        </div>
+    </div>
+</div>

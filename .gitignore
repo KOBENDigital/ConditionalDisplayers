@@ -263,3 +263,5 @@ build/*.zip
 umbracoClient/
 src/TestWeb/
 /src/TestClient713
+/WebTest/
+/WebTestV9

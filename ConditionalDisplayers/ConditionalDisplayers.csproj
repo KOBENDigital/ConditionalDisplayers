@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;net472</TargetFrameworks>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <PackageId>Our.Umbraco.ConditionalDisplayers</PackageId>
+        <Title>ConditionalDisplayers</Title>
+        <Description>Umbraco property editors that allow the conditional display of other properties.</Description>
+        <Product>Conditional Displayers</Product>
+        <PackageTags>umbraco property editor backoffice condition display</PackageTags>
+        <AssemblyName>Our.Umbraco.ConditionalDisplayers</AssemblyName>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Version>3.0.1-pre001</Version>
+		<Authors>Mario Lopez</Authors>
+		<PackageIcon>koben_logo.png</PackageIcon>
+		<PackageReleaseNotes>Compatible with Umbraco 9</PackageReleaseNotes>
+		<RepositoryUrl>https://github.com/KOBENDigital/ConditionalDisplayers</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IsPackable>true</IsPackable>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+		<Reference Include="System.Web" />
+		<PackageReference Include="UmbracoCms.Core" Version="8.15.0" />
+		<PackageReference Include="UmbracoCms.Web" Version="8.15.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Common">
+			<Version>9.0.1</Version>
+		</PackageReference>
+	</ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\README.nuget.md">
+          <Pack>True</Pack>
+          <PackagePath>\README.md</PackagePath>
+        </None>
+        <None Include="images\koben_logo.png">
+          <Pack>True</Pack>
+          <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="App_Plugins\ConditionalDisplayers\cd.css" />
+      <None Remove="App_Plugins\ConditionalDisplayers\package.manifest" />
+      <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
+      <None Remove="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="App_Plugins\ConditionalDisplayers\cd.css" />
+      <Content Include="App_Plugins\ConditionalDisplayers\package.manifest" />
+      <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.html" />
+    </ItemGroup>
+</Project>

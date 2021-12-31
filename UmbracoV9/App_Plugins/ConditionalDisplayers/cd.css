@@ -1,0 +1,30 @@
+﻿
+.cd-prevalues-multivalues {
+    display: flex;
+    align-items: stretch;
+}
+
+    .cd-prevalues-multivalues > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 0.8rem;
+    }
+
+
+    .cd-prevalues-multivalues input[type='text'] {
+        width: auto;
+    }
+
+        .cd-prevalues-multivalues > div:last-child {
+            margin-right: 0;
+        }
+
+        .cd-prevalues-multivalues > div.align-bottom {
+            align-self: flex-end;
+        }
+
+
+    .cd-prevalues-multivalues .umb-node-preview__action{
+        cursor: pointer;
+    }

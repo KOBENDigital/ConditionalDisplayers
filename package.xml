@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>ConditionalDisplayers</name>
+      <version>3.0.0-beta001</version>
+       <iconUrl>https://raw.githubusercontent.com/KOBENDigital/Iconic/master/Documentation/koben_logo.png</iconUrl>
+      <license url="https://opensource.org/licenses/MIT">MIT</license>
+      <url>https://github.com/KOBENDigital/ConditionalDisplayers</url>
+      <requirements type="strict">
+        <major>9</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Mario Lopez</name>
+      <website>https://our.umbraco.com</website>
+    </author>
+    <readme><![CDATA[Umbraco property editors that allow the conditional display of other properties.]]></readme>
+  </info>
+  <files>
+    <folder path="ConditionalDisplayers/App_Plugins/ConditionalDisplayers" orgPath="App_Plugins/ConditionalDisplayers"/>
+    <file path="ConditionalDisplayers/bin/Release/net5.0/Our.Umbraco.ConditionalDisplayers.dll" orgPath="bin/Our.Umbraco.ConditionalDisplayers.dll" />
+  </files>
+  <Actions />
+  <control />
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

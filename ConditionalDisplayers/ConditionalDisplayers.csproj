@@ -60,7 +60,9 @@
       <Content Include="App_Plugins\ConditionalDisplayers\package.manifest" />
       <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.controller.js" />
       <Content Include="App_Plugins\ConditionalDisplayers\prevalueeditors\cdMultivalues.html" />
-      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js" />
+      <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\cdSharedLogic.js">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.controller.js" />
       <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\checkbox\checkbox.html" />
       <Content Include="App_Plugins\ConditionalDisplayers\propertyeditors\dropdownFlexible\dropdownFlexible.controller.js" />

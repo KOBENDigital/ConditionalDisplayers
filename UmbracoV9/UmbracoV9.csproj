@@ -35,6 +35,10 @@
       <ProjectReference Include="..\ConditionalDisplayers\ConditionalDisplayers.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="App_Plugins\" />
+    </ItemGroup>
+
     <PropertyGroup>
         <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
     </PropertyGroup>

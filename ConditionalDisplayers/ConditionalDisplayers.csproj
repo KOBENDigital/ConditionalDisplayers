@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFrameworks>net5.0;net472</TargetFrameworks>
         <ContentTargetFolders>.</ContentTargetFolders>
         <PackageId>Our.Umbraco.ConditionalDisplayers</PackageId>
         <Title>ConditionalDisplayers</Title>
@@ -9,7 +9,7 @@
         <PackageTags>umbraco property editor backoffice condition display</PackageTags>
         <AssemblyName>Our.Umbraco.ConditionalDisplayers</AssemblyName>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<Version>3.0.0</Version>
+		<Version>3.0.1-pre001</Version>
 		<Authors>Mario Lopez</Authors>
 		<PackageIcon>koben_logo.png</PackageIcon>
 		<PackageReleaseNotes>Compatible with Umbraco 9</PackageReleaseNotes>
@@ -19,19 +19,23 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.1" />
-        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.1" />
-    </ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+		<Reference Include="System.Web" />
+		<PackageReference Include="UmbracoCms.Core" Version="8.15.0" />
+		<PackageReference Include="UmbracoCms.Web" Version="8.15.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Common">
+			<Version>9.0.1</Version>
+		</PackageReference>
+	</ItemGroup>
 
     <ItemGroup>
-        <None Include="build\**\*.*">
-            <Pack>True</Pack>
-            <PackagePath>build</PackagePath>
-        </None>
-        <None Include="..\README.md">
+        <None Include="..\README.nuget.md">
           <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
+          <PackagePath>\README.md</PackagePath>
         </None>
         <None Include="images\koben_logo.png">
           <Pack>True</Pack>
